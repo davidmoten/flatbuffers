@@ -1,6 +1,7 @@
 # flatbuffers-compiler
 Maven artifact containing compiled binaries for the flatbuffers-compiler (flatc, etc.) for the linux platform.
 
+##Usage
 See the profile with id *test* in [pom.xml](pom.xml) for an example of how to generate java source using the binaries in this artifact.
 
 ##Test
