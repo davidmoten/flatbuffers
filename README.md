@@ -18,7 +18,6 @@ mvn clean install -Ptest
 ## How to build the binaries that are placed in this artifact
 You don't need to do this (it's why this artifact exists!)
 ```bash
-## pre-requesite
 sudo apt-get install cmake
 git clone https://github.com/google/flatbuffers.git
 cd flatbuffers/build
