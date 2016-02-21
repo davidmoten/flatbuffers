@@ -1,4 +1,7 @@
 # flatbuffers-compiler
+[![Travis CI](https://travis-ci.org/davidmoten/flatbuffers-compiler.svg)](https://travis-ci.org/davidmoten/flatbuffers-compiler)<br/>
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-compiler/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-compiler)<br/>
+
 Maven artifact containing compiled binaries for the flatbuffers-compiler (flatc, etc.) for the linux platform.
 
 ##Usage
