@@ -15,7 +15,7 @@ mvn clean install -Ptest
 You don't need to do this (it's why this artifact exists!)
 ```bash
 ## pre-requesite
-## sudo apt-get install cmake
+sudo apt-get install cmake
 git clone https://github.com/google/flatbuffers.git
 cd flatbuffers/build
 cmake ..
