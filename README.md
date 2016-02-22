@@ -9,6 +9,8 @@ Status: *pre-alpha*
 ##flatbuffers-compiler
 Contains compiled binaries for linux platform (and others if someone contributes) to generate java classes (and other) from flatbuffers schema files.
 
+This artifact is used with *maven-dependency-plugin* to unpack, *maven-exec-plugin* to execute and *build-helper-maven-plugin* to add the generated source to the build path. See [example project](example) for details.
+
 ##flatbuffers-java
 Runtime library artifact for use with flatbuffers generated java classes.
 
