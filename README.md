@@ -1,8 +1,8 @@
-# flatbuffers-compiler
-[![Travis CI](https://travis-ci.org/davidmoten/flatbuffers-compiler.svg)](https://travis-ci.org/davidmoten/flatbuffers-compiler)<br/>
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-compiler/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-compiler)<br/>
+# flatbuffers
+[![Travis CI](https://travis-ci.org/davidmoten/flatbuffers.svg)](https://travis-ci.org/davidmoten/flatbuffers)<br/>
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers)<br/>
 
-Maven artifact containing compiled binaries for the flatbuffers-compiler (flatc, etc.) for the linux platform.
+Maven artifact containing compiled binaries for the flatbuffers (flatc, etc.) for the linux platform.
 
 ##Usage
 See the profile with id *test* in [pom.xml](pom.xml) for an example of how to generate java source using the binaries in this artifact.
