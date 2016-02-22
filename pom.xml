@@ -53,6 +53,7 @@
 
     <modules>
         <module>flatbuffers-compiler</module>
+        <module>flatbuffers-java</module>
     </modules>
 
 </project>
