@@ -88,8 +88,7 @@
                                 <argument>--gen-mutable</argument>
                                 <argument>-o</argument>
                                 <argument>${fbs.sources}</argument>
-                                <argument>-I</argument>
-                                <argument>${baseDir}/src/main/fbs</argument>
+                                <argument>monster.fbs</argument>
                             </arguments>
                         </configuration>
                     </plugin>
