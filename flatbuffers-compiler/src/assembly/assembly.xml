@@ -8,7 +8,7 @@
   </formats>
   <fileSets>
     <fileSet>
-      <directory>${basedir}/bin</directory>
+      <directory>${basedir}/bin/linux</directory>
       <outputDirectory>/bin</outputDirectory>
     </fileSet>
   </fileSets>
