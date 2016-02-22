@@ -9,7 +9,7 @@ Surprisingly the flatbuffers project team do not publish artifacts of any sort f
 Status: *pre-alpha*
 
 ##Versioning
-The artifacts carry versions like 1.3.0.1 which correspond to a 0.1 release of the flatbuffers 1.3.0 project (from google).
+The artifacts carry versions like 1.3.0.1 which correspond to a 0.1 release of the flatbuffers [1.3.0 release](https://github.com/google/flatbuffers/releases/tag/v1.3.0) (from google).
 
 
 ##flatbuffers-compiler
