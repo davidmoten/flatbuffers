@@ -2,20 +2,18 @@
 [![Travis CI](https://travis-ci.org/davidmoten/flatbuffers.svg)](https://travis-ci.org/davidmoten/flatbuffers)<br/>
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers)<br/>
 
-Maven artifact containing compiled binaries for the flatbuffers (flatc, etc.) for the linux platform.
+Maven artifacts for use with flatbuffers.
 
 Status: *pre-alpha*
 
-##Usage
-See the profile with id *test* in [pom.xml](pom.xml) for an example of how to generate java source using the binaries in this artifact.
+##flatbuffers-compiler
+Contains compiled binaries for linux platform (and others if someone contributes) to generate java classes (and other) from flatbuffers schema files.
 
-##Test
-```
-# build binary tar.gz artifact
-mvn clean install
-# unpack binary tar.gz artifact and generate sources from it
-mvn clean install -Ptest
-``` 
+##flatbuffers-java
+Runtime library artifact for use with flatbuffers generated java classes.
+
+##Example usage
+See [example project](example) which is also used to unit test the artifacts.
 
 ## How to build the binaries that are placed in this artifact
 You don't need to do this (it's why this artifact exists!)
