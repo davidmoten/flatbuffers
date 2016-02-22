@@ -2,7 +2,9 @@
 [![Travis CI](https://travis-ci.org/davidmoten/flatbuffers.svg)](https://travis-ci.org/davidmoten/flatbuffers)<br/>
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers)<br/>
 
-Maven artifacts for use with flatbuffers.
+Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers).
+
+Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts.
 
 Status: *pre-alpha*
 
