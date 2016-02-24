@@ -8,6 +8,7 @@
     </parent>
     <artifactId>flatbuffers-compiler</artifactId>
     <packaging>pom</packaging>
+    <description>Compressed archive of binaries for flatbuffers particularly flatc for generating classes. Multiple platforms supported vi different classifications.</description>
 
     <build>
         <plugins>
