@@ -4,7 +4,7 @@
 
 Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers).
 
-Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts.
+Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
 Status: *pre-alpha*
 
