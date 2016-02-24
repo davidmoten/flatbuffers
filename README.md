@@ -67,7 +67,6 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
     </executions>
     <configuration>
         <executable>${project.build.directory}/bin/flatc</executable>
-        <!-- optional -->
         <workingDirectory>${fbs.sources}</workingDirectory>
         <arguments>
             <argument>--java</argument>
@@ -97,6 +96,15 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
         </execution>
     </executions>
 </plugin>
+```
+
+There are a couple of properties mentioned in the xml block above. I set them to these values for my projects:
+
+```xml
+<properties>
+    <fbs.sources>src/main/fbs</fbs.sources>
+    <fbs.generated.sources>${project.build.directory}/generated-sources/java</fbs.generated.sources>
+</properties>
 ```
 
 To use the generated classes you'll need the runtime dependency *flatbuffers-java*. Add the following to your dependencies section in pom.xml:
