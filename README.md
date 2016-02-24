@@ -102,7 +102,7 @@ There are a couple of properties mentioned in the xml block above. I set them to
 
 ```xml
 <properties>
-    <fbs.sources>src/main/fbs</fbs.sources>
+    <fbs.sources>${basedir}/src/main/fbs</fbs.sources>
     <fbs.generated.sources>${project.build.directory}/generated-sources/java</fbs.generated.sources>
 </properties>
 ```
