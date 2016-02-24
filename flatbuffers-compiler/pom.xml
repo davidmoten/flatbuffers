@@ -16,7 +16,8 @@
                 <version>2.6</version>
                 <configuration>
                     <descriptors>
-                        <descriptor>src/assembly/assembly.xml</descriptor>
+                        <descriptor>src/assembly/linux.xml</descriptor>
+                        <descriptor>src/assembly/windows.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>

@@ -4,12 +4,16 @@
 
 Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers).
 
-Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts.
+Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts.
 
 Status: *pre-alpha*
 
+##Versioning
+The artifacts carry versions like 1.3.0.1 which correspond to a 0.1 release of the flatbuffers [1.3.0 release](https://github.com/google/flatbuffers/releases/tag/v1.3.0) (from google).
+
+
 ##flatbuffers-compiler
-Contains compiled binaries for linux platform (and others if someone contributes) to generate java classes (and other) from flatbuffers schema files.
+Contains compiled binaries for linux and windows platforms (and others if someone contributes) to generate java classes (and other) from flatbuffers schema files.
 
 This artifact is used with *maven-dependency-plugin* to unpack, *maven-exec-plugin* to execute and *build-helper-maven-plugin* to add the generated source to the build path. See [example project](example) for details.
 
