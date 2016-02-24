@@ -23,6 +23,82 @@ Runtime library artifact for use with flatbuffers generated java classes.
 ##Example usage
 See [example project](example) which is also used to unit test the artifacts.
 
+Essentially you add this block of xml to the build/plugins section of your pom.xml to generate flatbuffers classes (java):
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId>
+    <version>2.10</version>
+    <executions>
+        <execution>
+            <id>unpack</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>unpack</goal>
+            </goals>
+            <configuration>
+                <artifactItems>
+                    <artifactItem>
+                        <groupId>com.github.davidmoten</groupId>
+                        <artifactId>flatbuffers-compiler</artifactId>
+                        <version>1.3.0.1</version>
+                        <type>tar.gz</type>
+                        <classifier>distribution-linux</classifier>
+                        <overWrite>true</overWrite>
+                        <outputDirectory>${project.build.directory}</outputDirectory>
+                    </artifactItem>
+                </artifactItems>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>1.4.0</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>exec</goal>
+            </goals>
+            <phase>generate-sources</phase>
+        </execution>
+    </executions>
+    <configuration>
+        <executable>${project.build.directory}/bin/flatc</executable>
+        <!-- optional -->
+        <workingDirectory>${fbs.sources}</workingDirectory>
+        <arguments>
+            <argument>--java</argument>
+            <argument>--gen-mutable</argument>
+            <argument>-o</argument>
+            <argument>${fbs.generated.sources}</argument>
+            <argument>monster.fbs</argument>
+        </arguments>
+    </configuration>
+</plugin>
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <version>1.10</version>
+    <executions>
+        <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>add-source</goal>
+            </goals>
+            <configuration>
+                <sources>
+                    <source>${fbs.generated.sources}</source>
+                </sources>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
 ## How to build the binaries that are placed in this artifact
 You don't need to do this (it's why this artifact exists!)
 ```bash
