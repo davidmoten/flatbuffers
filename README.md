@@ -107,7 +107,7 @@ There are a couple of properties mentioned in the xml block above. I set them to
 </properties>
 ```
 
-To use the generated classes you'll need the runtime dependency *flatbuffers-java*. Add the following to your dependencies section in pom.xml:
+To use the generated classes you'll need the runtime dependency *flatbuffers-java*. Add the following to the dependencies section in pom.xml:
 
 ```xml
 <dependency>
