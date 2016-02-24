@@ -99,6 +99,16 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
 </plugin>
 ```
 
+To use the generated classes you'll need the runtime dependency *flatbuffers-java*. Add the following to your dependencies section in pom.xml:
+
+```xml
+<dependency>
+    <groupId>com.github.davidmoten</groupId>
+    <artifactId>flatbuffers-java</artifactId>
+    <version>1.3.0.1</version>
+</dependency>
+```
+
 ## How to build the binaries that are placed in this artifact
 You don't need to do this (it's why this artifact exists!)
 ```bash
