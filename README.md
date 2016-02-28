@@ -23,6 +23,14 @@ This artifact is used with *maven-dependency-plugin* to unpack, *maven-exec-plug
 ##flatbuffers-java
 Runtime library artifact for use with flatbuffers generated java classes.
 
+```xml
+<dependency>
+    <groupId>com.github.davidmoten</groupId>
+    <artifactId>flatbuffers-java</artifactId>
+    <version>1.3.0.1</version>
+</dependency>
+```
+
 ##Example usage
 See [example project](example) which is also used to unit test the artifacts.
 
