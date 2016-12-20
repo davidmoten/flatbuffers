@@ -17,6 +17,11 @@
 package com.google.flatbuffers;
 
 import static com.google.flatbuffers.Constants.*;
+
+import java.nio.CharBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.CoderResult;
 import java.util.Arrays;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -28,8 +33,7 @@ import java.nio.charset.Charset;
 
 /**
  * Class that helps you build a FlatBuffer.  See the section
- * @ref flatbuffers_guide_use_java_c-sharp "Use in Java/C#" in the
- * main FlatBuffers documentation.
+ * "Use in Java/C#" in the main FlatBuffers documentation.
  */
 public class FlatBufferBuilder {
     /// @cond FLATBUFFERS_INTERNAL
@@ -46,6 +50,8 @@ public class FlatBufferBuilder {
     int num_vtables = 0;            // Number of entries in `vtables` in use.
     int vector_num_elems = 0;       // For the current vector being built.
     boolean force_defaults = false; // False omits default values from the serialized data.
+    CharsetEncoder encoder = utf8charset.newEncoder();
+    ByteBuffer dst;
     /// @endcond
 
    /**
@@ -182,7 +188,7 @@ public class FlatBufferBuilder {
      *
      * @param x A `boolean` to put into the buffer.
      */
-    public void putBoolean(boolean x) { bb.put      (space -= 1, (byte)(x ? 1 : 0)); }
+    public void putBoolean(boolean x) { bb.put      (space -= Constants.SIZEOF_BYTE, (byte)(x ? 1 : 0)); }
 
     /**
      * Add a `byte` to the buffer, backwards from the current location. Doesn't align nor
@@ -190,7 +196,7 @@ public class FlatBufferBuilder {
      *
      * @param x A `byte` to put into the buffer.
      */
-    public void putByte   (byte    x) { bb.put      (space -= 1, x); }
+    public void putByte   (byte    x) { bb.put      (space -= Constants.SIZEOF_BYTE, x); }
 
     /**
      * Add a `short` to the buffer, backwards from the current location. Doesn't align nor
@@ -198,7 +204,7 @@ public class FlatBufferBuilder {
      *
      * @param x A `short` to put into the buffer.
      */
-    public void putShort  (short   x) { bb.putShort (space -= 2, x); }
+    public void putShort  (short   x) { bb.putShort (space -= Constants.SIZEOF_SHORT, x); }
 
     /**
      * Add an `int` to the buffer, backwards from the current location. Doesn't align nor
@@ -206,7 +212,7 @@ public class FlatBufferBuilder {
      *
      * @param x An `int` to put into the buffer.
      */
-    public void putInt    (int     x) { bb.putInt   (space -= 4, x); }
+    public void putInt    (int     x) { bb.putInt   (space -= Constants.SIZEOF_INT, x); }
 
     /**
      * Add a `long` to the buffer, backwards from the current location. Doesn't align nor
@@ -214,7 +220,7 @@ public class FlatBufferBuilder {
      *
      * @param x A `long` to put into the buffer.
      */
-    public void putLong   (long    x) { bb.putLong  (space -= 8, x); }
+    public void putLong   (long    x) { bb.putLong  (space -= Constants.SIZEOF_LONG, x); }
 
     /**
      * Add a `float` to the buffer, backwards from the current location. Doesn't align nor
@@ -222,7 +228,7 @@ public class FlatBufferBuilder {
      *
      * @param x A `float` to put into the buffer.
      */
-    public void putFloat  (float   x) { bb.putFloat (space -= 4, x); }
+    public void putFloat  (float   x) { bb.putFloat (space -= Constants.SIZEOF_FLOAT, x); }
 
     /**
      * Add a `double` to the buffer, backwards from the current location. Doesn't align nor
@@ -230,7 +236,7 @@ public class FlatBufferBuilder {
      *
      * @param x A `double` to put into the buffer.
      */
-    public void putDouble (double  x) { bb.putDouble(space -= 8, x); }
+    public void putDouble (double  x) { bb.putDouble(space -= Constants.SIZEOF_DOUBLE, x); }
     /// @endcond
 
     /**
@@ -238,49 +244,49 @@ public class FlatBufferBuilder {
      *
      * @param x A `boolean` to put into the buffer.
      */
-    public void addBoolean(boolean x) { prep(1, 0); putBoolean(x); }
+    public void addBoolean(boolean x) { prep(Constants.SIZEOF_BYTE, 0); putBoolean(x); }
 
     /**
      * Add a `byte` to the buffer, properly aligned, and grows the buffer (if necessary).
      *
      * @param x A `byte` to put into the buffer.
      */
-    public void addByte   (byte    x) { prep(1, 0); putByte   (x); }
+    public void addByte   (byte    x) { prep(Constants.SIZEOF_BYTE, 0); putByte   (x); }
 
     /**
      * Add a `short` to the buffer, properly aligned, and grows the buffer (if necessary).
      *
      * @param x A `short` to put into the buffer.
      */
-    public void addShort  (short   x) { prep(2, 0); putShort  (x); }
+    public void addShort  (short   x) { prep(Constants.SIZEOF_SHORT, 0); putShort  (x); }
 
     /**
      * Add an `int` to the buffer, properly aligned, and grows the buffer (if necessary).
      *
      * @param x An `int` to put into the buffer.
      */
-    public void addInt    (int     x) { prep(4, 0); putInt    (x); }
+    public void addInt    (int     x) { prep(Constants.SIZEOF_INT, 0); putInt    (x); }
 
     /**
      * Add a `long` to the buffer, properly aligned, and grows the buffer (if necessary).
      *
      * @param x A `long` to put into the buffer.
      */
-    public void addLong   (long    x) { prep(8, 0); putLong   (x); }
+    public void addLong   (long    x) { prep(Constants.SIZEOF_LONG, 0); putLong   (x); }
 
     /**
      * Add a `float` to the buffer, properly aligned, and grows the buffer (if necessary).
      *
      * @param x A `float` to put into the buffer.
      */
-    public void addFloat  (float   x) { prep(4, 0); putFloat  (x); }
+    public void addFloat  (float   x) { prep(Constants.SIZEOF_FLOAT, 0); putFloat  (x); }
 
     /**
      * Add a `double` to the buffer, properly aligned, and grows the buffer (if necessary).
      *
      * @param x A `double` to put into the buffer.
      */
-    public void addDouble (double  x) { prep(8, 0); putDouble (x); }
+    public void addDouble (double  x) { prep(Constants.SIZEOF_DOUBLE, 0); putDouble (x); }
 
    /**
     * Adds on offset, relative to where it will be written.
@@ -362,18 +368,34 @@ public class FlatBufferBuilder {
     /// @endcond
 
    /**
-    * Encode the string `s` in the buffer using UTF-8.
+    * Encode the string `s` in the buffer using UTF-8.  If {@code s} is
+    * already a {@link CharBuffer}, this method is allocation free.
     *
     * @param s The string to encode.
     * @return The offset in the buffer where the encoded string starts.
     */
-    public int createString(String s) {
-        byte[] utf8 = s.getBytes(utf8charset);
-        addByte((byte)0);
-        startVector(1, utf8.length, 1);
-        bb.position(space -= utf8.length);
-        bb.put(utf8, 0, utf8.length);
-        return endVector();
+    public int createString(CharSequence s) {
+        int length = s.length();
+        int estimatedDstCapacity = (int) (length * encoder.maxBytesPerChar());
+        if (dst == null || dst.capacity() < estimatedDstCapacity) {
+            dst = ByteBuffer.allocate(Math.max(128, estimatedDstCapacity));
+        }
+
+        dst.clear();
+
+        CharBuffer src = s instanceof CharBuffer ? (CharBuffer) s :
+            CharBuffer.wrap(s);
+        CoderResult result = encoder.encode(src, dst, true);
+        if (result.isError()) {
+            try {
+                result.throwException();
+            } catch (CharacterCodingException x) {
+                throw new Error(x);
+            }
+        }
+
+        dst.flip();
+        return createString(dst);
     }
 
    /**
@@ -428,8 +450,7 @@ public class FlatBufferBuilder {
     * call this directly. The `FlatBuffers` compiler will generate helper methods
     * that call this method internally.
     * <p>
-    * For example, using the "Monster" code found on the
-    * @ref flatbuffers_guide_use_java_c-sharp "landing page". An
+    * For example, using the "Monster" code found on the "landing page". An
     * object of type `Monster` can be created using the following code:
     *
     * <pre>{@code
@@ -708,6 +729,8 @@ public class FlatBufferBuilder {
      * Get the ByteBuffer representing the FlatBuffer. Only call this after you've
      * called `finish()`. The actual data starts at the ByteBuffer's current position,
      * not necessarily at `0`.
+     *
+     * @return The {@link ByteBuffer} representing the FlatBuffer
      */
     public ByteBuffer dataBuffer() {
         finished();

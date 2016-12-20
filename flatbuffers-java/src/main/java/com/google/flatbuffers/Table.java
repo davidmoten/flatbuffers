@@ -19,6 +19,11 @@ package com.google.flatbuffers;
 import static com.google.flatbuffers.Constants.*;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.CharBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CoderResult;
 
 /// @cond FLATBUFFERS_INTERNAL
 
@@ -26,6 +31,13 @@ import java.nio.ByteOrder;
  * All tables in the generated code derive from this class, and add their own accessors.
  */
 public class Table {
+  private final static ThreadLocal<CharsetDecoder> UTF8_DECODER = new ThreadLocal<CharsetDecoder>() {
+    @Override
+    protected CharsetDecoder initialValue() {
+      return Charset.forName("UTF-8").newDecoder();
+    }
+  };
+  private final static ThreadLocal<CharBuffer> CHAR_BUFFER = new ThreadLocal<CharBuffer>();
   /** Used to hold the position of the `bb` buffer. */
   protected int bb_pos;
   /** The underlying ByteBuffer to hold the data of the Table. */
@@ -71,20 +83,34 @@ public class Table {
    * @return Returns a `String` from the data stored inside the FlatBuffer at `offset`.
    */
   protected String __string(int offset) {
+    CharsetDecoder decoder = UTF8_DECODER.get();
+    decoder.reset();
+
     offset += bb.getInt(offset);
-    if (bb.hasArray()) {
-      return new String(bb.array(), bb.arrayOffset() + offset + SIZEOF_INT, bb.getInt(offset),
-                        FlatBufferBuilder.utf8charset);
-    } else {
-      // We can't access .array(), since the ByteBuffer is read-only,
-      // off-heap or a memory map
-      ByteBuffer bb = this.bb.duplicate().order(ByteOrder.LITTLE_ENDIAN);
-      // We're forced to make an extra copy:
-      byte[] copy = new byte[bb.getInt(offset)];
-      bb.position(offset + SIZEOF_INT);
-      bb.get(copy);
-      return new String(copy, 0, copy.length, FlatBufferBuilder.utf8charset);
+    ByteBuffer src = bb.duplicate().order(ByteOrder.LITTLE_ENDIAN);
+    int length = src.getInt(offset);
+    src.position(offset + SIZEOF_INT);
+    src.limit(offset + SIZEOF_INT + length);
+
+    int required = (int)((float)length * decoder.maxCharsPerByte());
+    CharBuffer dst = CHAR_BUFFER.get();
+    if (dst == null || dst.capacity() < required) {
+      dst = CharBuffer.allocate(required);
+      CHAR_BUFFER.set(dst);
     }
+
+    dst.clear();
+
+    try {
+      CoderResult cr = decoder.decode(src, dst, true);
+      if (!cr.isUnderflow()) {
+        cr.throwException();
+      }
+    } catch (CharacterCodingException x) {
+      throw new Error(x);
+    }
+
+    return dst.flip().toString();
   }
 
   /**
@@ -113,9 +139,13 @@ public class Table {
   /**
    * Get a whole vector as a ByteBuffer.
    *
-   * This is efficient, since it only allocates a new bytebuffer object, but does not actually copy
-   * the data, it still refers to the same bytes as the original ByteBuffer. Also useful with nested
-   * FlatBuffers, etc.
+   * This is efficient, since it only allocates a new {@link ByteBuffer} object,
+   * but does not actually copy the data, it still refers to the same bytes
+   * as the original ByteBuffer. Also useful with nested FlatBuffers, etc.
+   *
+   * @param vector_offset The position of the vector in the byte buffer
+   * @param elem_size The size of each element in the array
+   * @return The {@link ByteBuffer} for the array
    */
   protected ByteBuffer __vector_as_bytebuffer(int vector_offset, int elem_size) {
     int o = __offset(vector_offset);
@@ -142,10 +172,12 @@ public class Table {
   }
 
   /**
-   * Check if a ByteBuffer contains a file identifier.
+   * Check if a {@link ByteBuffer} contains a file identifier.
    *
-   * @param bb A `ByteBuffer` to check if it contains the identifier `ident`.
-   * @param ident A `String` identifier of the flatbuffer file.
+   * @param bb A {@code ByteBuffer} to check if it contains the identifier
+   * `ident`.
+   * @param ident A `String` identifier of the FlatBuffer file.
+   * @return True if the buffer contains the file identifier
    */
   protected static boolean __has_identifier(ByteBuffer bb, String ident) {
     if (ident.length() != FILE_IDENTIFIER_LENGTH)
