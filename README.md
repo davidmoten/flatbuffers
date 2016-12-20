@@ -9,7 +9,7 @@ Surprisingly the flatbuffers project team do not publish artifacts of any sort f
 Status: *released to Maven Central*
 
 ##Versioning
-The artifacts carry versions like 1.3.0.1 which correspond to a 0.1 release of the flatbuffers [1.3.0 release](https://github.com/google/flatbuffers/releases/tag/v1.3.0) (from google).
+The artifacts carry versions like 1.4.0.1 which correspond to a 0.1 release of the flatbuffers [1.4.0 release](https://github.com/google/flatbuffers/releases/tag/v1.4.0) (from google).
 
 
 ##flatbuffers-compiler
@@ -27,7 +27,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.3.0.1</version>
+    <version>1.4.0.1</version>
 </dependency>
 ```
 
@@ -53,7 +53,7 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
                     <artifactItem>
                         <groupId>com.github.davidmoten</groupId>
                         <artifactId>flatbuffers-compiler</artifactId>
-                        <version>1.3.0.1</version>
+                        <version>1.4.0.1</version>
                         <type>tar.gz</type>
                         <classifier>distribution-linux</classifier>
                         <overWrite>true</overWrite>
@@ -124,16 +124,18 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.3.0.1</version>
+    <version>1.4.0.1</version>
 </dependency>
 ```
 
 ## How to build the binaries that are placed in this artifact
-You don't need to do this (it's why this artifact exists!)
+You don't need to do this (it's why this artifact exists!):
+
 ```bash
 sudo apt-get install cmake
 git clone https://github.com/google/flatbuffers.git
-cd flatbuffers/build
+cd flatbuffers
+mkdir build
 cmake ..
 make
 mkdir bin
