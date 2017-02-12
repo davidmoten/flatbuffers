@@ -138,6 +138,7 @@ sudo apt-get install cmake
 git clone https://github.com/google/flatbuffers.git
 cd flatbuffers
 mkdir build
+cd build
 cmake ..
 make
 mkdir bin
