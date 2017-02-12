@@ -11,7 +11,7 @@ Supports Java 1.6+.
 Status: *released to Maven Central*
 
 ##Versioning
-The artifacts carry versions like 1.4.0.1 which correspond to a 0.1 release of the flatbuffers [1.4.0 release](https://github.com/google/flatbuffers/releases/tag/v1.4.0) (from google).
+The artifacts carry versions like 1.5.0.1 which correspond to a 0.1 release of the flatbuffers [1.5.0 release](https://github.com/google/flatbuffers/releases/tag/v1.5.0) (from google).
 
 
 ##flatbuffers-compiler
