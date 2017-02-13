@@ -137,6 +137,7 @@ You don't need to do this (it's why this artifact exists!):
 ```bash
 sudo apt-get install cmake
 git clone https://github.com/google/flatbuffers.git
+git checkout v1.5.0
 cd flatbuffers
 mkdir build
 cd build
