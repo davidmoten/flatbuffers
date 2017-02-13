@@ -12,7 +12,7 @@ Surprisingly the flatbuffers project team do not publish artifacts of any sort f
 Status: *released to Maven Central*
 
 ##Versioning
-The artifacts carry versions like 1.5.0.2 which correspond to a 0.1 release of the flatbuffers [1.5.0 release](https://github.com/google/flatbuffers/releases/tag/v1.5.0) (from google).
+The artifacts carry versions like 1.5.0.2 which correspond to a 0.2 release of the flatbuffers [1.5.0 release](https://github.com/google/flatbuffers/releases/tag/v1.5.0) (from google).
 
 
 ##flatbuffers-compiler
