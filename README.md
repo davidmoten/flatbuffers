@@ -6,7 +6,8 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-Supports Java 1.6+.
+* Supports flatbuffers 1.3, 1.4, 1.5 via versions 1.3.0.1, 1.4.0.1, 1.5.0.1 of this project
+* Supports Java 1.6+.
 
 Status: *released to Maven Central*
 
@@ -147,9 +148,16 @@ cp libflat* bin
 ```
 The `flatbuffers/build/bin` directory now contains the binaries that are placed in the bin directory of this artifact.
 
-To run:
+To generate java sources manually here's an example:
 ```bash
 cd src/fbs
 ../../bin/flatc --java --gen-mutable -o ../../target/generated-sources/java monster.fbs
 ```
+
+###For project maintainers
+To update this project with executables for a new version of flatbuffers: 
+* copy the files in `flatbuffers/build/bin` above to `flatbuffers-compiler/bin/linux/`
+* download `flatc_windows_exe.zip` from [releases](https://github.com/google/flatbuffers/releases), unpack it and copy `flatc.exe` to `flatbuffers-compiler/bin/windows/`
+* build and release!
+
 
