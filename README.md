@@ -6,13 +6,13 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5 via versions 1.3.0.1, 1.4.0.1, 1.5.0.1 of this project
+* Supports flatbuffers 1.3, 1.4, 1.5 via versions 1.3.0.1, 1.4.0.1, 1.5.0.2 of this project
 * Supports Java 1.6+.
 
 Status: *released to Maven Central*
 
 ##Versioning
-The artifacts carry versions like 1.5.0.1 which correspond to a 0.1 release of the flatbuffers [1.5.0 release](https://github.com/google/flatbuffers/releases/tag/v1.5.0) (from google).
+The artifacts carry versions like 1.5.0.2 which correspond to a 0.1 release of the flatbuffers [1.5.0 release](https://github.com/google/flatbuffers/releases/tag/v1.5.0) (from google).
 
 
 ##flatbuffers-compiler
@@ -30,7 +30,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.5.0.1</version>
+    <version>1.5.0.2</version>
 </dependency>
 ```
 
@@ -56,7 +56,7 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
                     <artifactItem>
                         <groupId>com.github.davidmoten</groupId>
                         <artifactId>flatbuffers-compiler</artifactId>
-                        <version>1.5.0.1</version>
+                        <version>1.5.0.2</version>
                         <type>tar.gz</type>
                         <classifier>distribution-linux</classifier>
                         <overWrite>true</overWrite>
@@ -127,7 +127,7 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.5.0.1</version>
+    <version>1.5.0.2</version>
 </dependency>
 ```
 
