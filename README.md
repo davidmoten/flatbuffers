@@ -15,7 +15,7 @@ Status: *released to Maven Central*
 The artifacts carry versions like 1.6.0.1 which correspond to a 0.1 release of the flatbuffers [1.6.0 release](https://github.com/google/flatbuffers/releases/tag/v1.6.0) (from google).
 
 Current versions:
-| flatbuffers-compiler<br/>flatbuffers-java | Supports |
+| flatbuffers-compiler, flatbuffers-java | Supports |
 | ----------------------------------------- | -------- |
 | 1.3.0.1                                   | 1.3      |
 | 1.4.0.1                                   | 1.4      |
