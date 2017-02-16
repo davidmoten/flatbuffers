@@ -6,13 +6,21 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 Surprisingly the flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5, 1.6 via versions 1.3.0.1, 1.4.0.1, 1.6.0.1, 1.6.0.1 of this project
+* Supports flatbuffers 1.3, 1.4, 1.5, 1.6
 * Supports Java 1.6+.
 
 Status: *released to Maven Central*
 
 ##Versioning
 The artifacts carry versions like 1.6.0.1 which correspond to a 0.1 release of the flatbuffers [1.6.0 release](https://github.com/google/flatbuffers/releases/tag/v1.6.0) (from google).
+
+Current versions:
+| flatbuffers-compiler<br/>flatbuffers-java | Supports |
+| ----------------------------------------- | -------- |
+| 1.3.0.1                                   | 1.3      |
+| 1.4.0.1                                   | 1.4      |
+| 1.5.0.2                                   | 1.5      |
+| 1.6.0.1                                   | 1.6      |
 
 
 ##flatbuffers-compiler
