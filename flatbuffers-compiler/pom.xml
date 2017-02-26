@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.github.davidmoten</groupId>
         <artifactId>flatbuffers-parent</artifactId>
-        <version>1.6.0.2-SNAPSHOT</version>
+        <version>1.6.0.2</version>
     </parent>
     <artifactId>flatbuffers-compiler</artifactId>
     <packaging>pom</packaging>
