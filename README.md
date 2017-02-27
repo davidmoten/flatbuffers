@@ -158,6 +158,8 @@ cp libflat* bin
 ```
 The `flatbuffers/build/bin` directory now contains the binaries that are placed in the bin directory of this artifact.
 
+In addition, the java source classes need to be copied from `flatbuffers/java`(google repo) into `flatbuffers/flatbuffers-java/src/main/java`.
+
 To generate java sources manually here's an example:
 ```bash
 cd src/fbs
