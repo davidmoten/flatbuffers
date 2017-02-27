@@ -20,8 +20,8 @@ Current versions:
 | ----------------------------------------- | -------- |
 | 1.3.0.1                                   | 1.3      |
 | 1.4.0.1                                   | 1.4      |
-| 1.5.0.2                                   | 1.5      |
-| 1.6.0.1                                   | 1.6      |
+| 1.5.0.3                                   | 1.5      |
+| 1.6.0.2                                   | 1.6      |
 
 
 ##flatbuffers-compiler
@@ -39,7 +39,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.6.0.1</version>
+    <version>1.6.0.2</version>
 </dependency>
 ```
 
