@@ -65,7 +65,7 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
                     <artifactItem>
                         <groupId>com.github.davidmoten</groupId>
                         <artifactId>flatbuffers-compiler</artifactId>
-                        <version>1.6.0.1</version>
+                        <version>1.6.0.2</version>
                         <type>tar.gz</type>
                         <classifier>distribution-linux</classifier>
                         <overWrite>true</overWrite>
