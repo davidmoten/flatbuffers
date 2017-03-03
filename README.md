@@ -136,7 +136,7 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.6.0.1</version>
+    <version>1.6.0.2</version>
 </dependency>
 ```
 
