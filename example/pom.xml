@@ -58,7 +58,7 @@
                                     <artifactId>flatbuffers-compiler</artifactId>
                                     <version>${project.version}</version>
                                     <type>tar.gz</type>
-                                    <classifier>distribution-linux</classifier>
+                                    <classifier>distribution-osx</classifier>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>

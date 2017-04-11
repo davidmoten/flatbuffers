@@ -17,6 +17,7 @@
                 <configuration>
                     <descriptors>
                         <descriptor>src/assembly/linux.xml</descriptor>
+                        <descriptor>src/assembly/osx.xml</descriptor>
                         <descriptor>src/assembly/windows.xml</descriptor>
                     </descriptors>
                 </configuration>

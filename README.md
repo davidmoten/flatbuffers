@@ -11,7 +11,7 @@ The Google flatbuffers project team do not publish artifacts of any sort for fla
 
 Status: *released to Maven Central*
 
-##Versioning
+## Versioning
 The artifacts carry versions like 1.6.0.1 which correspond to a 0.1 release of the flatbuffers [1.6.0 release](https://github.com/google/flatbuffers/releases/tag/v1.6.0) (from google).
 
 Current versions:
@@ -24,15 +24,16 @@ Current versions:
 | 1.6.0.2                                   | 1.6      |
 
 
-##flatbuffers-compiler
+## flatbuffers-compiler
 Contains compiled binaries to generate java classes (and other) from flatbuffers schema files: 
 
 * linux (x86 64-bit)  (*tar.gz* artifact)
+* osx (*tar.gz* artifact)
 * windows (*zip* artifact)
 
 This artifact is used with *maven-dependency-plugin* to unpack, *maven-exec-plugin* to execute and *build-helper-maven-plugin* to add the generated source to the build path. See [example project](example) for details.
 
-##flatbuffers-java
+## flatbuffers-java
 Runtime library artifact for use with flatbuffers generated java classes.
 
 ```xml
