@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.github.davidmoten</groupId>
         <artifactId>flatbuffers-parent</artifactId>
-        <version>1.6.0.3-SNAPSHOT</version>
+        <version>1.6.0.3</version>
     </parent>
     <artifactId>example</artifactId>
     <description>Example project demonstrating generating sources using flatc and running a test with the generated classes using the flatbuffers-java runtime library</description>
