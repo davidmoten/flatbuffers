@@ -21,14 +21,14 @@ Current versions:
 | 1.3.0.1                                   | 1.3      |
 | 1.4.0.1                                   | 1.4      |
 | 1.5.0.3                                   | 1.5      |
-| 1.6.0.2                                   | 1.6      |
+| 1.6.0.3                                   | 1.6      |
 
 
 ## flatbuffers-compiler
 Contains compiled binaries to generate java classes (and other) from flatbuffers schema files: 
 
 * linux (x86 64-bit)  (*tar.gz* artifact)
-* osx (*tar.gz* artifact)
+* osx (*tar.gz* artifact) (from 1.6)
 * windows (*zip* artifact)
 
 This artifact is used with *maven-dependency-plugin* to unpack, *maven-exec-plugin* to execute and *build-helper-maven-plugin* to add the generated source to the build path. See [example project](example) for details.
