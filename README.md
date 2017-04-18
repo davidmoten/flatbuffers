@@ -12,7 +12,7 @@ The Google flatbuffers project team do not publish artifacts of any sort for fla
 Status: *released to Maven Central*
 
 ## Versioning
-The artifacts carry versions like 1.6.0.1 which correspond to a 0.1 release of the flatbuffers [1.6.0 release](https://github.com/google/flatbuffers/releases/tag/v1.6.0) (from google).
+The artifacts carry versions like 1.6.0.3 which correspond to a 0.3 release of the flatbuffers [1.6.0 release](https://github.com/google/flatbuffers/releases/tag/v1.6.0) (from google).
 
 Current versions:
 
@@ -40,7 +40,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.6.0.2</version>
+    <version>1.6.0.3</version>
 </dependency>
 ```
 
