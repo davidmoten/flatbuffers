@@ -44,7 +44,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 </dependency>
 ```
 
-##Example usage
+## Example usage
 See [example project](example) which is also used to unit test the artifacts.
 
 Essentially you add this block of xml to the build/plugins section of your pom.xml to generate flatbuffers classes (java):
@@ -167,7 +167,7 @@ cd src/fbs
 ../../bin/flatc --java --gen-mutable -o ../../target/generated-sources/java monster.fbs
 ```
 
-###For project maintainers
+### For project maintainers
 To update this project with executables for a new version of flatbuffers: 
 * copy the files in `flatbuffers/build/bin` above to `flatbuffers-compiler/bin/linux/`
 * download `flatc_windows_exe.zip` from [releases](https://github.com/google/flatbuffers/releases), unpack it and copy `flatc.exe` to `flatbuffers-compiler/bin/windows/`
