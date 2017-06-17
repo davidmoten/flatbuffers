@@ -6,7 +6,7 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 The Google flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5, 1.6
+* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7
 * Supports Java 1.6+.
 
 Status: *released to Maven Central*
@@ -22,13 +22,14 @@ Current versions:
 | 1.4.0.1                                   | 1.4      |
 | 1.5.0.3                                   | 1.5      |
 | 1.6.0.3                                   | 1.6      |
+| 1.7.0.1                                   | 1.7      |
 
 
 ## flatbuffers-compiler
 Contains compiled binaries to generate java classes (and other) from flatbuffers schema files: 
 
 * linux (x86 64-bit)  (*tar.gz* artifact)
-* osx (*tar.gz* artifact) (from 1.6)
+* osx (*tar.gz* artifact) (from 1.6, 1.7 will be supported in 1.7.0.2+)
 * windows (*zip* artifact)
 
 This artifact is used with *maven-dependency-plugin* to unpack, *maven-exec-plugin* to execute and *build-helper-maven-plugin* to add the generated source to the build path. See [example project](example) for details.
@@ -40,7 +41,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.6.0.3</version>
+    <version>1.7.0.1</version>
 </dependency>
 ```
 
@@ -66,7 +67,7 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
                     <artifactItem>
                         <groupId>com.github.davidmoten</groupId>
                         <artifactId>flatbuffers-compiler</artifactId>
-                        <version>1.6.0.2</version>
+                        <version>1.7.0.1</version>
                         <type>tar.gz</type>
                         <classifier>distribution-linux</classifier>
                         <overWrite>true</overWrite>
@@ -137,7 +138,7 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.6.0.3</version>
+    <version>1.7.0.1</version>
 </dependency>
 ```
 
