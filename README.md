@@ -6,7 +6,7 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 The Google flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7 
+* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8
 * Supports Java 1.6+.
 
 Status: *released to Maven Central*
@@ -23,6 +23,7 @@ Current versions:
 | 1.5.0.3                                   | 1.5      |
 | 1.6.0.3                                   | 1.6      |
 | 1.7.0.1                                   | 1.7      |
+| 1.8.0.1                                   | 1.8      | 
 
 
 ## flatbuffers-compiler
@@ -41,7 +42,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.7.0.1</version>
+    <version>1.8.0.1</version>
 </dependency>
 ```
 
@@ -67,7 +68,7 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
                     <artifactItem>
                         <groupId>com.github.davidmoten</groupId>
                         <artifactId>flatbuffers-compiler</artifactId>
-                        <version>1.7.0.1</version>
+                        <version>1.8.0.1</version>
                         <type>tar.gz</type>
                         <classifier>distribution-linux</classifier>
                         <overWrite>true</overWrite>
@@ -138,7 +139,7 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.7.0.1</version>
+    <version>1.8.0.1</version>
 </dependency>
 ```
 
