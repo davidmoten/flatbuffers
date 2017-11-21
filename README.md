@@ -6,7 +6,7 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 The Google flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7
+* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7 
 * Supports Java 1.6+.
 
 Status: *released to Maven Central*
