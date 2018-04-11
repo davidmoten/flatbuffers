@@ -13,7 +13,7 @@ addons:
       - g++-4.9
       - gcc-4.9
       - libc6-dev
-      - libstdc++6
+      - libstdc++
 
 before_install:
   - export CC=/usr/bin/gcc-4.9;
