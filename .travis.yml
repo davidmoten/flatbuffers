@@ -1,10 +1,10 @@
 language: java
-#dist: precise
+dist: precise
 jdk:
   - oraclejdk8
   - oraclejdk7
   - openjdk7
-#  - openjdk6
+  - openjdk6
 addons:
   apt:
     sources:
@@ -13,6 +13,7 @@ addons:
       - g++-4.9
       - gcc-4.9
       - libc6-dev
+      - libstdc++6
 
 before_install:
   - export CC=/usr/bin/gcc-4.9;
