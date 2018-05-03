@@ -149,11 +149,16 @@ You don't need to do this (it's why this artifact exists!):
 ```bash
 sudo apt-get install cmake
 git clone https://github.com/google/flatbuffers.git
-git checkout v1.5.0
+git checkout vN.N.N
+
+## for flatbuffers < 1.9.0
 cd flatbuffers
 mkdir build
 cd build
 cmake ..
+
+## for flatbuffers >= 1.9.0
+cmake .
 make
 mkdir bin
 cp flat* bin
