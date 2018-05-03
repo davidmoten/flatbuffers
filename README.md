@@ -158,6 +158,8 @@ cd build
 cmake ..
 
 ## for flatbuffers >= 1.9.0
+## I think this flag is necessary for travis to pass on precise
+CMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0"
 cmake .
 make
 mkdir bin
