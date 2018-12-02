@@ -6,8 +6,8 @@ Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers
 
 The Google flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8
-* Supports Java 1.6+.
+* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.10
+* Supports Java 1.6+ (Java 8 for 1.10+)
 
 Status: *released to Maven Central*
 
@@ -24,6 +24,7 @@ Current versions:
 | 1.6.0.3                                   | 1.6      |
 | 1.7.0.1                                   | 1.7      |
 | 1.8.0.1                                   | 1.8      | 
+| 1.10.0.2                                  | 1.10     |
 
 
 ## flatbuffers-compiler
@@ -68,7 +69,7 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
                     <artifactItem>
                         <groupId>com.github.davidmoten</groupId>
                         <artifactId>flatbuffers-compiler</artifactId>
-                        <version>1.8.0.1</version>
+                        <version>1.10.0.2</version>
                         <type>tar.gz</type>
                         <classifier>distribution-linux</classifier>
                         <overWrite>true</overWrite>
@@ -139,7 +140,7 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 <dependency>
     <groupId>com.github.davidmoten</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.8.0.1</version>
+    <version>1.10.0.2</version>
 </dependency>
 ```
 
@@ -157,9 +158,7 @@ mkdir build
 cd build
 cmake ..
 
-## for flatbuffers >= 1.9.0
-## I think this flag is necessary for travis to pass on precise
-CMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0"
+## for flatbuffers >= 1.9.0 on xenial
 cmake .
 make
 mkdir bin
