@@ -32,6 +32,13 @@
     </connection>
       <tag>HEAD</tag>
   </scm>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.flatbuffers</groupId>
+            <artifactId>flatbuffers-java</artifactId>
+            <version>1.12.0</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
