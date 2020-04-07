@@ -16,9 +16,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.davidmoten</groupId>
+            <groupId>com.google.flatbuffers</groupId>
             <artifactId>flatbuffers-java</artifactId>
-            <version>${project.parent.version}</version>
+            <version>1.12.0</version>
         </dependency>
 
         <!-- test -->

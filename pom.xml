@@ -56,7 +56,6 @@
 
     <modules>
         <module>flatbuffers-compiler</module>
-        <module>flatbuffers-java</module>
         <module>example</module>
     </modules>
 

@@ -42,9 +42,9 @@ Runtime library artifact for use with flatbuffers generated java classes.
 
 ```xml
 <dependency>
-    <groupId>com.github.davidmoten</groupId>
+    <groupId>com.google.flatbuffers</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.8.0.1</version>
+    <version>1.12.0</version>
 </dependency>
 ```
 
@@ -180,6 +180,7 @@ cd src/fbs
 To update this project with executables for a new version of flatbuffers: 
 * copy the files in `flatbuffers/build/bin` above to `flatbuffers-compiler/bin/linux/`
 * download `flatc_windows_exe.zip` from [releases](https://github.com/google/flatbuffers/releases), unpack it and copy `flatc.exe` to `flatbuffers-compiler/bin/windows/`
+* update the google flatbuffers-java dependency in example/pom.xml to latest
 * build and release!
 
 
