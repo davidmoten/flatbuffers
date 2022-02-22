@@ -8,7 +8,7 @@
   </formats>
   <fileSets>
     <fileSet>
-      <directory>${basedir}/bin/linux</directory>
+      <directory>${project.build.directory}/linux</directory>
       <outputDirectory>/bin</outputDirectory>
     </fileSet>
   </fileSets>
