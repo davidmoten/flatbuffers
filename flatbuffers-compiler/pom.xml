@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.github.davidmoten</groupId>
@@ -11,28 +13,36 @@
 
     <build>
         <plugins>
-<plugin>
-      <artifactId>maven-antrun-plugin</artifactId>
-      <version>3.0.0</version>
-      <executions>
-         <execution>
-            <phase>generate-resources</phase>
-            <configuration>
-               <target>
-                  <echo message="unzipping linux binary for inclusion by assembly" />
-                  <unzip src="bin/linux/flatc.zip" dest="${project.build.directory}/linux/" />
-                  <unzip src="bin/osx/flatc.zip" dest="${project.build.directory}/osx/" />
-                  <unzip src="bin/windows/flatc.zip" dest="${project.build.directory}/windows/" />
-                  <chmod file="${project.build.directory}/linux/flatc" perm="+x"/>
-                  <chmod file="${project.build.directory}/osx/flatc" perm="+x"/>
-               </target>
-            </configuration>
-            <goals>
-               <goal>run</goal>
-            </goals>
-         </execution>
-      </executions>
-   </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target>
+                                <echo
+                                    message="unzipping linux binary for inclusion by assembly" />
+                                <unzip src="bin/linux/flatc.zip"
+                                    dest="${project.build.directory}/linux/" />
+                                <unzip src="bin/osx/flatc.zip"
+                                    dest="${project.build.directory}/osx/" />
+                                <unzip src="bin/windows/flatc.zip"
+                                    dest="${project.build.directory}/windows/" />
+                                <chmod
+                                    file="${project.build.directory}/linux/flatc"
+                                    perm="+x" />
+                                <chmod
+                                    file="${project.build.directory}/osx/flatc"
+                                    perm="+x" />
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
