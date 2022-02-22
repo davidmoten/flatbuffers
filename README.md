@@ -1,5 +1,5 @@
 # flatbuffers
-<a href="https://github.com/davidmoten/flatbuffers-parent/actions/workflows/ci.yml"><img src="https://github.com/davidmoten/flatbuffers-parent/actions/workflows/ci.yml/badge.svg"/></a><br/>
+<a href="https://github.com/davidmoten/flatbuffers/actions/workflows/ci.yml"><img src="https://github.com/davidmoten/flatbuffers/actions/workflows/ci.yml/badge.svg"/></a><br/>
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-parent/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-parent)<br/>
 
 Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers).
