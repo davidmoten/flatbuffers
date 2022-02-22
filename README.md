@@ -47,7 +47,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.google.flatbuffers</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>VERSION_HERE</version>
+    <version>2.0.3</version>
 </dependency>
 ```
 
