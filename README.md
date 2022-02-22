@@ -1,13 +1,15 @@
 # flatbuffers
-[![Travis CI](https://travis-ci.org/davidmoten/flatbuffers.svg)](https://travis-ci.org/davidmoten/flatbuffers)<br/>
+<a href="https://github.com/davidmoten/flatbuffers-parent/actions/workflows/ci.yml"><img src="https://github.com/davidmoten/flatbuffers-parent/actions/workflows/ci.yml/badge.svg"/></a><br/>
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-parent/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/flatbuffers-parent)<br/>
 
 Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers).
 
 The Google flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
-* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.10, 1.12
+* Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.10, 1.12, 2.0.3
 * Supports Java 1.6+ (Java 8 for 1.10+)
+
+Update: From 2.0.3, the Google flatbuffers project started publishing binaries for Linux, OSX and Windows for download from their Releases page. This project packages them up as Maven artifacts. 
 
 Status: *released to Maven Central*
 
@@ -26,6 +28,7 @@ Current versions:
 | 1.8.0.1                                   | 1.8      | 
 | 1.10.0.2                                  | 1.10     |
 | 1.12.0.1                                  | 1.12     |
+| 2.0.3.1                                   | 2.0.3    |
 
 
 ## flatbuffers-compiler
@@ -44,7 +47,7 @@ Runtime library artifact for use with flatbuffers generated java classes.
 <dependency>
     <groupId>com.google.flatbuffers</groupId>
     <artifactId>flatbuffers-java</artifactId>
-    <version>1.12.0</version>
+    <version>VERSION_HERE</version>
 </dependency>
 ```
 
