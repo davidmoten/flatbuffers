@@ -9,7 +9,7 @@ The Google flatbuffers project team do not publish artifacts of any sort for fla
 * Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.10, 1.12, 2.0.3
 * Supports Java 1.6+ (Java 8 for 1.10+)
 
-Update: From 2.0.3, the Google flatbuffers project started publishing binaries for Linux, OSX and Windows for download from their Releases page. This project packages them up as Maven artifacts. 
+Update: From 2.0.3, the Google flatbuffers project started publishing binaries for Linux, OSX and Windows for download from their Releases page. This project continues to package them up as Maven artifacts. 
 
 Status: *released to Maven Central*
 
