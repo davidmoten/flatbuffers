@@ -9,7 +9,7 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>${basedir}/bin/windows</directory>
+            <directory>${project.build.directory}/bin/windows</directory>
             <outputDirectory>/bin</outputDirectory>
         </fileSet>
     </fileSets>

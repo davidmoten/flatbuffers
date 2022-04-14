@@ -9,7 +9,7 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>${basedir}/bin/osx</directory>
+            <directory>${project.base.directory}/bin/osx</directory>
             <outputDirectory>/bin</outputDirectory>
         </fileSet>
     </fileSets>
