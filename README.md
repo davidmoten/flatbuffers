@@ -4,12 +4,10 @@
 
 Maven artifacts for use with [flatbuffers](https://github.com/google/flatbuffers).
 
-The Google flatbuffers project team do not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users are expected to build from source. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
+For years the Google flatbuffers project team did not publish artifacts of any sort for flatbuffers to repositories like Maven Central. Users were expected to build from source. In May 2021 Google started publishing the built artifacts as downloads from their [releases](https://github.com/google/flatbuffers/releases) page but did not wrap them as Maven artifacts. This project shortcuts these actions for you and allows you to do all using Maven artifacts from Maven Central.
 
 * Supports flatbuffers 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.10, 1.12, 2.0.3
 * Supports Java 1.6+ (Java 8 for 1.10+)
-
-Update: From 2.0.3, the Google flatbuffers project started publishing binaries for Linux, OSX and Windows for download from their Releases page. This project continues to package them up as Maven artifacts. 
 
 Status: *released to Maven Central*
 
