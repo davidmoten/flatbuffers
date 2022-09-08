@@ -29,7 +29,7 @@ Current versions:
 | 1.10.0.2                                  | 1.10     |
 | 1.12.0.1                                  | 1.12     |
 | 2.0.3.2                                   | 2.0.3    |
-
+| 2.0.8                                     | 2.0.8    |
 
 ## flatbuffers-compiler
 Contains compiled binaries to generate java classes (and other) from flatbuffers schema files: 
@@ -150,6 +150,8 @@ To use the generated classes you'll need the runtime dependency *flatbuffers-jav
 
 ## How to build the binaries that are placed in this artifact
 You don't need to do this (it's why this artifact exists!):
+
+Note that google now makes available the binaries for each platform at [https://github.com/google/flatbuffers/releases]. Just download them from there and replace the zip files in flatbuffers-compiler/bin.
 
 ```bash
 sudo apt-get install cmake
