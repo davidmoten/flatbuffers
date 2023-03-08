@@ -127,6 +127,50 @@ Essentially you add this block of xml to the build/plugins section of your pom.x
 </plugin>
 ```
 
+If you run the build on different operating systems, you can use kr.motd.maven:os-maven-plugin Maven extension to make 
+Maven download binaries specifically for your operating system.
+
+```xml
+<buiild>
+    <extensions>
+        <extension>
+            <groupId>kr.motd.maven</groupId>
+            <artifactId>os-maven-plugin</artifactId>
+            <version>1.7.1</version>
+        </extension>
+    </extensions>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.10</version>
+            <executions>
+                <execution>
+                    <id>unpack</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>unpack</goal>
+                    </goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>com.github.davidmoten</groupId>
+                                <artifactId>flatbuffers-compiler</artifactId>
+                                <version>2.0.3.1</version>
+                                <type>tar.gz</type>
+                                <classifier>distribution-${os.detected.name}</classifier>
+                                <overWrite>true</overWrite>
+                                <outputDirectory>${project.build.directory}</outputDirectory>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</buiild>
+```
+
 There are a couple of properties mentioned in the xml block above. I set them to these values for my projects:
 
 ```xml
