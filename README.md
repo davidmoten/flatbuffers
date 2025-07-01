@@ -131,7 +131,7 @@ If you run the build on different operating systems, you can use kr.motd.maven:o
 Maven download binaries specifically for your operating system.
 
 ```xml
-<buiild>
+<build>
     <extensions>
         <extension>
             <groupId>kr.motd.maven</groupId>
@@ -168,7 +168,7 @@ Maven download binaries specifically for your operating system.
             </executions>
         </plugin>
     </plugins>
-</buiild>
+</build>
 ```
 
 There are a couple of properties mentioned in the xml block above. I set them to these values for my projects:
